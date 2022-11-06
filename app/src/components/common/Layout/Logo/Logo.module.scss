@@ -1,0 +1,25 @@
+@import 'assets/style/index.scss';
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.logo-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+}

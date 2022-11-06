@@ -1,0 +1,105 @@
+@import 'assets/style/index.scss';
+
+.header {
+  padding-top: 18px;
+  background-color: #831661;
+  background-image: url('./images/hero-mobile.jpg'), linear-gradient(to right, #7a166d, #971552);
+  background-position: top center;
+  background-repeat: no-repeat;
+  color: white;
+  &__wrapper {
+    position: relative;
+    padding: $content-padding;
+    padding-bottom: 160px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+
+      width: 59px;
+      height: 59px;
+
+      border-radius: 50%;
+      background-color: rgba(225, 36, 87, 0.5);
+      background-image: url('./images/icon-down.svg');
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+
+      transform: translateX(-50%);
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 208px;
+    margin: 0 auto;
+    margin-bottom: 38px;
+
+    font-style: 13px;
+    line-height: 13px;
+
+    text-transform: uppercase;
+    // letter-spacing: 0.5px;
+    :nth-child(1) {
+      font-weight: 100;
+    }
+    :nth-child(2) {
+      font-weight: normal;
+    }
+    :nth-child(3) {
+      margin-top: 6px;
+
+      font-size: 70px;
+      line-height: 70px;
+      font-weight: 900;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .header {
+    padding-top: 25px;
+
+    background-image: url('./images/hero-tablet.jpg'), linear-gradient(to right, #7a166d, #971552);
+
+    &__wrapper {
+      padding-bottom: 163px;
+
+      &::after {
+        bottom: 37px;
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .header {
+    padding-top: 34px;
+
+    background-image: url('./images/hero-desktop.jpg'), linear-gradient(to right, #711573, #6e1a80);
+
+    &__wrapper {
+      padding-bottom: 158px;
+
+      &::after {
+        left: 53px;
+        bottom: 66px;
+      }
+    }
+  }
+}
