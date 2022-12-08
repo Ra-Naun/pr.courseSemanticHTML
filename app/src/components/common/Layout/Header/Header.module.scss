@@ -38,6 +38,9 @@
   &__top-bar {
     display: flex;
     justify-content: space-between;
+
+    @media (min-width: $tablet-width) {
+    }
   }
 
   &__title {
@@ -52,7 +55,6 @@
     line-height: 13px;
 
     text-transform: uppercase;
-    // letter-spacing: 0.5px;
     :nth-child(1) {
       font-weight: 100;
     }
