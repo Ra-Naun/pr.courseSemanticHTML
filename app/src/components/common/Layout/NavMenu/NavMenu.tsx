@@ -6,6 +6,7 @@ import { ReactComponent as IconMenuCloseImg } from './images/icon-menu-close.svg
 import Button from 'components/common/Button/Button';
 
 import styles from './NavMenu.module.scss';
+import { useOnClickOutside } from 'hooks/useOnClickOutside';
 
 const NavMenu: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -16,20 +17,9 @@ const NavMenu: FC = () => {
 
   const swchRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleMenuVisible = (e: MouseEvent) => {
-      if (!isOpenMenu) return;
-      if (!swchRef.current?.contains(e.target as HTMLElement)) {
-        toggleOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleMenuVisible);
-
-    return () => {
-      document.removeEventListener('click', handleMenuVisible);
-    }; // eslint-disable-next-line
-  }, [isOpenMenu]);
+  useOnClickOutside(swchRef, () => {
+    isOpenMenu && toggleOpen(false);
+  });
 
   return (
     <div className={styles['nav-wrapper']} ref={swchRef}>
